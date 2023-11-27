@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #343a40;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #todo-app {
+      width: 400px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    #todo-app header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    #todo-app main {
+      padding: 20px;
+    }
+
+    #taskInput {
+      width: calc(100% - 22px);
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid #007bff;
+      margin-bottom: 20px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    #taskList {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .taskItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .taskItem:hover {
+      background-color: #f2f2f2;
+    }
+
+    .taskItem input[type="checkbox"] {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .taskItem label {
+      flex: 1;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .taskItem button {
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .taskItem button:hover {
+      background-color: #c82333;
+    }
+
+    #addBtn {
+      width: 100%;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #addBtn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <title>Advanced To-Do List</title>
+</head>
+<body>
+
+  <div id="todo-app">
+    <header>To-Do List</header>
+    <main>
+      <input type="text" id="taskInput" placeholder="Add a new task">
+      <button id="addBtn">Add Task</button>
+      <ul id="taskList"></ul>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const taskInput = document.getElementById('taskInput');
+      const addBtn = document.getElementById('addBtn');
+      const taskList = document.getElementById('taskList');
+
+      addBtn.addEventListener('click', function () {
+        const taskText = taskInput.value.trim();
+
+        if (taskText !== '') {
+          const taskItem = document.createElement('li');
+          taskItem.className = 'taskItem';
+          taskItem.innerHTML = `
+            <input type="checkbox">
+            <label>${taskText}</label>
+            <button onclick="removeTask(this)">Remove</button>
+          `;
+
+          taskList.appendChild(taskItem);
+          taskInput.value = '';
+        }
+      });
+    });
+
+    function removeTask(button) {
+      const taskItem = button.parentNode;
+      taskItem.parentNode.removeChild(taskItem);
+    }
+  </script>
+</body>
+</html>
