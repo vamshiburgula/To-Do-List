@@ -6,8 +6,8 @@ app = Flask(__name__)
 # Hardcoded user credentials (replace with a database in production)
 users = {
     'user': 'password',
-    'vamshiburgula': 'vb123',
-    'chaithu': 'pass123',
+    'vamshiburgula': 'vamshi@1609$',
+    'chaithu_burgula': 'vb@1609',
 }
 
 @app.route('/')
