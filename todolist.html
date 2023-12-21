@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +12,24 @@
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       height: 100vh;
+    }
+
+    .top-iframe {
+      background-color: #e6f7ff;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #007bff;
+    }
+
+    p {
+      line-height: 1.6;
     }
 
     #todo-app {
@@ -110,10 +126,28 @@
     #addBtn:hover {
       background-color: #0056b3;
     }
+
+    .bottom-iframe {
+      background-color: #f2f2f2;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    p.copyright {
+      color: #333;
+    }
   </style>
   <title>Advanced To-Do List</title>
 </head>
+
 <body>
+
+  <div class="top-iframe">
+    <!-- Content for the top iframe -->
+    <h2>TO-DO-LIST</h2>
+    <p>Welcome to my advanced to-do list web application. Stay organized and productive!</p>
+  </div>
 
   <div id="todo-app">
     <header>To-Do List</header>
@@ -122,6 +156,11 @@
       <button id="addBtn">Add Task</button>
       <ul id="taskList"></ul>
     </main>
+  </div>
+
+  <div class="bottom-iframe">
+    <!-- Content for the bottom iframe -->
+    <p class="copyright">&copy; 2023 Vamshi Burgula. All rights reserved.</p>
   </div>
 
   <script>
@@ -154,4 +193,5 @@
     }
   </script>
 </body>
+
 </html>
