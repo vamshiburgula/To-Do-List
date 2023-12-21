@@ -13,7 +13,7 @@
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       height: 100vh;
     }
@@ -24,6 +24,8 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       padding: 20px;
+      margin: auto;
+      /* Center the login container horizontally */
     }
 
     h1 {
@@ -61,11 +63,38 @@
       text-align: center;
       margin-top: 10px;
     }
+
+    .top-iframe {
+      background-color: #e6f7ff;
+      width: 100%;
+      height: 100px;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+    }
+
+    .bottom-iframe {
+      background-color: #f2f2f2;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+    h2{
+      align-self: center;
+      
+    }
   </style>
   <title>Login</title>
 </head>
 
 <body>
+
+  <div class="top-iframe">
+    <!-- Content for the top iframe -->
+    <h2>TO-DO-LIST</h2>
+    <p>Welcome to my to-do-list web login page.Here we just organize the works or activities performed by the userS</p>
+
+  </div>
 
   <div class="login-container">
     <h1>Login</h1>
@@ -86,6 +115,12 @@
   </div>
 
 
+
+  <div class="bottom-iframe">
+    <!-- Content for the bottom iframe -->
+    <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+  </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const loginForm = document.getElementById('loginForm');
@@ -100,14 +135,10 @@
         if (username === 'user' && password === 'password') {
           // Redirect to the to-do list page
           window.location.href = 'todolist.html';
-        } 
-
-else if (username === 'vamshiburgula' && password === 'vamshi@1609$') {
+        } else if (username === 'vamshiburgula' && password === 'vamshi@1609$') {
           // Redirect to the to-do list page
           window.location.href = 'todolist.html';
-        } 
-
-else if (username === 'chaithu_burgula' && password === 'vb@1609$') {
+        } else if (username === 'chaithu_burgula' && password === 'vb@1609$') {
           // Redirect to the to-do list page
           window.location.href = 'todolist.html';
         } else {
@@ -115,37 +146,7 @@ else if (username === 'chaithu_burgula' && password === 'vb@1609$') {
         }
       });
     });
-    document.addEventListener('DOMContentLoaded', function () {
-      const loginForm = document.getElementById('loginForm');
-
-      if (loginForm) {
-        loginForm.addEventListener('submit', function (event) {
-          event.preventDefault();
-
-          const username = document.getElementById('username').value;
-          const password = document.getElementById('password').value;
-
-          // Basic authentication check (replace with proper authentication logic)
-          if (username === 'user' && password === 'password') {
-            // Redirect to the to-do list page
-            window.location.href = 'todolist.html';
-          }
-            else if (username === 'vamshiburgula' && password === 'vamshi@1609$') {
-          // Redirect to the to-do list page
-          window.location.href = 'todolist.html';
-        } 
-
-else if (username === 'chaithu_burgula' && password === 'vb@1609$') {
-          // Redirect to the to-do list page
-          window.location.href = 'todolist.html';
-          else {
-            // Alert for incorrect credentials
-            alert('Invalid username or password');
-          }
-        });
-      }
-    });
   </script>
 </body>
 
-</html>
+</html> 
